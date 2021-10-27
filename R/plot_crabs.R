@@ -13,3 +13,5 @@ ggplot(crabs, aes(x = carapace_length, y = body_depth)) +
            parse=T,               ## makes label actually show as a formula, with squared as superscript!
            color = "firebrick", size = 5)  + ## font color and size 
   theme_bw()
+
+#that's all
