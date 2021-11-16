@@ -1,4 +1,7 @@
-ggplot(crabs, aes(x = carapace_length, y = body_depth)) + 
+
+plot_crabs<- function(path_to_crabs){
+crabs <- tidyverse::read_csv(path_to_crabs)
+ggplot2::ggplot(crabs, aes(x = carapace_length, y = body_depth)) + 
   geom_point(size = 0.5) +        ## making the points small to help see the regression line
   geom_smooth(method = "lm",     ## make a trendline using "lm"
               color = "navy",    ## make the trendline navy
@@ -13,5 +16,6 @@ ggplot(crabs, aes(x = carapace_length, y = body_depth)) +
            parse=T,               ## makes label actually show as a formula, with squared as superscript!
            color = "firebrick", size = 5)  + ## font color and size 
   theme_bw()
+}
 
 #that's all
